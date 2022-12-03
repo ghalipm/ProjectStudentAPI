@@ -4,6 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
+
 import static org.springframework.boot.SpringApplication.run;
 
 @SpringBootApplication
@@ -16,7 +18,8 @@ public class Main {
 
     @GetMapping("/api/v1/hello")  // http://localhost:8080/api/v1/hello
     public String hello() {
-        return "Hello World!";
+        Instant instantCreatedAt= Instant.now();
+        return "Hello World! : "+instantCreatedAt;
     }
 }
 
